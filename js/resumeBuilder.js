@@ -1,4 +1,5 @@
 //helper.js
+
 var markers = [];
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
@@ -244,7 +245,7 @@ var project = {
 		"title" : "Breakout Game",
 		"dates" : "Feb 2016 - Present",
 		"description" : "An online version of Breakout game was created using HTML5 and JavaScript",
-		"images" : ["images/proj1.png", "images/proj2.png"]
+		"images" : "http://imgur.com/DiYvtM6"
 	}]
 }
 
@@ -353,10 +354,10 @@ project.display = function()
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
 			$(".project-entry:last").append(formattedProjectDescription);
-			var projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[0]);
-			$(".project-entry:last").append(projectImageUrl);
-			projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[1]);
-			$(".project-entry:last").append(projectImageUrl);
+			//var projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images);
+			//$(".project-entry:last").append(projectImageUrl);
+			//projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[1]);
+			//$(".project-entry:last").append(projectImageUrl);
 		}
 	}	
 }
@@ -401,3 +402,12 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
+var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
+  var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
+  var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
+  var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
+
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedLinkedIn);
+$("#footerContacts").append(formattedtwitter);
