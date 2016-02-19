@@ -1,16 +1,17 @@
 //helper.js
 
+
 var markers = [];
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">linkedIn</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="orange-text">Mobile</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="orange-text">Email</span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="orange-text">Twitter</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text">GitHub</span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="orange-text">LinkedIn</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
@@ -216,7 +217,7 @@ window.addEventListener('resize', function(e) {
 
 var bio = {
 	"name" : "Neeraj Kumar Jha",
-	"role" : "Developer In Making",
+	"role" : "Frontend Developer",
 	"welcomeMessage" : "hey, I am Neeraj ",
 	"bioPic" : "images/fry.jpg",
 	"contacts" : {
@@ -286,20 +287,20 @@ bio.display = function()
 	var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
-	var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
-	var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
-	var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
+	//var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
+	//var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
+	//var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
+	//var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
 	$("#topContacts").append(formattedMobile);
-	$("#topContacts").append(formattedLocation);
-	$("#topContacts").append(formattedEmail);
-	$("#topContacts").append(formattedGithub);
-	$("#topContacts").append(formattedLinkedIn);
-	$("#topContacts").append(formattedtwitter);
+	//$("#topContacts").append(formattedLocation);
+	//$("#topContacts").append(formattedEmail);
+	//$("#topContacts").append(formattedGithub);
+	//$("#topContacts").append(formattedLinkedIn);
+	//$("#topContacts").append(formattedtwitter);
 	$("#header").append(formattedWelcome);
 	$("#header").append(formattedBiopic);
 
@@ -402,12 +403,12 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
-  var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
-  var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
-  var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
+/*var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
+var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" style=\"background-color:black;\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
+var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
+var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
 
 $("#footerContacts").append(formattedEmail);
 $("#footerContacts").append(formattedGithub);
 $("#footerContacts").append(formattedLinkedIn);
-$("#footerContacts").append(formattedtwitter);
+$("#footerContacts").append(formattedtwitter);*/
