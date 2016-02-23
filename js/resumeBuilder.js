@@ -25,12 +25,12 @@ var HTMLworkEmployer = '<div>%data%';
 var HTMLworkTitle = ' - %data%</div>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescription = '<p class="desc"><br>%data%</p>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="https://github.com/Jonsnow21/breakout" target = "_blank">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescription = '<p class="desc"><br>%data%<br></p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = "<div class='education-entry'></div>";
@@ -217,7 +217,7 @@ window.addEventListener('resize', function(e) {
 
 var bio = {
 	"name" : "Neeraj Kumar Jha",
-	"role" : "Frontend Developer",
+	"role" : "Developer",
 	"welcomeMessage" : "hey, I am Neeraj ",
 	"bioPic" : "images/fry.jpg",
 	"contacts" : {
@@ -228,7 +228,7 @@ var bio = {
 		"linkedIn" : "https://in.linkedin.com/in/neeraj-jha-9525a5b8",
 		"location" : "E-170, St -7, Pandav Nagar, Delhi, India"
 	},
-	"skills" : ["Programming","C++","JavaScript","HTML","Awesomeness"]
+	"skills" : ["Programming", "Data Structures", "Algorithm", "C/C++", "JavaScript", "HTML/CSS"]
 }
 
 var work = {
@@ -237,7 +237,15 @@ var work = {
 		"title": "Summer Intern",
 		"dates": "3rd Aug, 2015 - 31st Aug, 2015",
 		"location": "Film City, Sector 16A, Noida, Uttar Pradesh, India",
-		"description": "Industrial training at BHEL-PEM, Noida in Control & Instrumentation department" 
+		"description": ["Project Engineering Management (PEM) division is BHEL's power plant 'System Integrator' providing total " +
+                   "engineering solutions for power projects as well as procurement and erection and commissioning of non-BHEL " + 
+                   "systems and equipment for thermal power stations, thereby enabling BHEL to offer complete Engineering, " + 
+                   "Procurement and Construction (EPC) services. ",
+                   "Industrial training at BHEL-PEM, Noida in Control and Instrumentation department, where I learned to " + 
+                   "select and mark the proper instruments on process diagrams, prepare the list of instruments, " + 
+                   "control logics (analog and binary), control room layout, cable schedule, cable termination details etc. " + 
+                   "I also learned Auto-Cad software which is used by C and I dept. to prepare plant schematics for implementation on CRT’s " + 
+                   "for control and monitoring the plant by their electronics division."]
 	}]
 }
 
@@ -245,8 +253,8 @@ var project = {
 	"projects": [{
 		"title" : "Breakout Game",
 		"dates" : "Feb 2016 - Present",
-		"description" : "An online version of Breakout game was created using HTML5 and JavaScript",
-		"images" : "http://imgur.com/DiYvtM6"
+		"description" : "Created an online version of game \"Breakout\" written entirely in pure vanilla JavaScript and rendered on HTML5 canvas",
+		"images" : ["images/proj1.png", "images/proj2.png", "images/proj3.png"]
 	}]
 }
 
@@ -263,9 +271,17 @@ var education = {
  		"location" : "Mayur vihar phase - 1, Delhi, India",
  		"degree" : "12th",
  		"major" : "Science",
- 		"dates": "2008 - 2012",
+ 		"dates": "2010 - 2012",
  		"url" : "http://www.ahlconinternational.com/"
- 	}],
+ 	},
+  {
+    "name": "Ahlcon International School",
+    "location" : "Mayur vihar phase - 1, Delhi, India",
+    "degree" : "10th",
+    "majore" : "Science",
+    "dates": "2008 - 2010",
+    "url" : "http://www.ahlconinternational.com/"
+  }],
  	"onlineCourses": [{
  		"title" : "Introduction to Computer Science",
  		"school" : "Harvard University",
@@ -276,7 +292,13 @@ var education = {
  		"school" : "LinuxFoundationX",
  		"dates" : "Jan 2016 - Mar 2016",
  		"url" : "https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x.2+1T2015/info"
- 	}]
+ 	},
+  {
+    "title" : "JavaScript Basics ",
+    "school" : "Udacity",
+    "dates" : "Jan 2016 - Feb 2016",
+    "url" : "https://www.udacity.com/me#!/"
+  }]
 }
 
 
@@ -284,24 +306,11 @@ bio.display = function()
 {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	var formattedBiopic = HTMLbioPic.replace("%data%", bio.bioPic);
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-	//var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
-	//var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
-	//var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
-	//var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 	$("#header").prepend(formattedRole);
 	$("#header").prepend(formattedName);
-	$("#topContacts").append(formattedMobile);
-	//$("#topContacts").append(formattedLocation);
-	//$("#topContacts").append(formattedEmail);
-	//$("#topContacts").append(formattedGithub);
-	//$("#topContacts").append(formattedLinkedIn);
-	//$("#topContacts").append(formattedtwitter);
-	$("#header").append(formattedWelcome);
 	$("#header").append(formattedBiopic);
 
 	if (bio.skills.length > 0) 
@@ -331,11 +340,13 @@ function displayWork()
 		var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
 		var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
 		var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+		var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description[0]);
 		$(".work-entry:last").append(formattedEmployerTitle);
 		$(".work-entry:last").append(formattedWorkDates);
 		$(".work-entry:last").append(formattedWorkLocation);
 		$(".work-entry:last").append(formattedWorkDescription);
+    formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description[1]);
+    $(".work-entry:last").append(formattedWorkDescription);
 	}
 }
 
@@ -355,10 +366,12 @@ project.display = function()
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
 			$(".project-entry:last").append(formattedProjectDescription);
-			//var projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images);
-			//$(".project-entry:last").append(projectImageUrl);
-			//projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[1]);
-			//$(".project-entry:last").append(projectImageUrl);
+			var projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[0]);
+			$(".project-entry:last").append(projectImageUrl);
+			projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[1]);
+			$(".project-entry:last").append(projectImageUrl);
+      projectImageUrl = HTMLprojectImage.replace("%data%", project.projects[i].images[2]);
+      $(".project-entry:last").append(projectImageUrl);
 		}
 	}	
 }
@@ -402,13 +415,3 @@ education.display();
 
 
 $("#mapDiv").append(googleMap);
-
-/*var formattedEmail = HTMLemail.replace("%data%", "<a class=\"contacts-link\" href=\"mailto:" + bio.contacts.email + "\">" + bio.contacts.email + "</a>");
-var formattedGithub = HTMLgithub.replace("%data%", "<a class=\"contacts-link\" style=\"background-color:black;\" href=\"" + bio.contacts.github + "\" target=\"_blank\">" + "Jonsnow21" + "</a>");
-var formattedLinkedIn = HTMLblog.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.linkedIn + "\" target=\"_blank\">" + "Neeraj Jha" + "</a>");
-var formattedtwitter = HTMLtwitter.replace("%data%", "<a class=\"contacts-link\" href=\"" + bio.contacts.twitter + "\" target=\"_blank\">" + "neeraj_1994" + "</a>");
-
-$("#footerContacts").append(formattedEmail);
-$("#footerContacts").append(formattedGithub);
-$("#footerContacts").append(formattedLinkedIn);
-$("#footerContacts").append(formattedtwitter);*/

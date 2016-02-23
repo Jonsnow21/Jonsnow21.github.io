@@ -1,3 +1,34 @@
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #f5ae23;
+  font-size: 25px;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav > ul > li > a{
+  color: white;
+    text-align: center;
+  display: block;
+  line-height: 200%;
+  padding: 14px 16px;
+  margin: 0;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+li a:hover {
+  background-color: #111;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 body,
 div,
 ul,
@@ -79,6 +110,7 @@ h5 {
 
 }
 
+
 p {
   font-size: 14px;
   color: #333;
@@ -97,6 +129,7 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+  padding: 5px 20px 10px 5px;
 }
 
 #skills-h3 {
@@ -139,6 +172,12 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+}
+
+.desc {
+  font-size: 18px;
+  font-style: normal;
+  font-family: Book Antiqua;
 }
 
 .center-content {
