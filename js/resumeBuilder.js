@@ -254,7 +254,7 @@ var project = {
 		"title" : "Breakout Game",
 		"dates" : "Feb 2016 - Present",
 		"description" : "Created an online version of game \"Breakout\" written entirely in pure vanilla JavaScript and rendered on HTML5 canvas",
-		"images" : ["images/proj1.png", "images/proj2.png", "images/proj3.png"]
+		"images" : ["images/proj1.jpg", "images/proj2.jpg", "images/proj3.jpg"]
 	}]
 }
 
